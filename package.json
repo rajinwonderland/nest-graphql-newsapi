@@ -1,0 +1,36 @@
+{
+	"name": "nest-graphql-newsapi",
+	"version": "1.0.0",
+	"description": "A graphql wrapper for the newsapi (https://newsapi.org) using NestJS",
+	"license": "MIT",
+	"scripts": {
+		"start": "ts-node src/main",
+		"prestart:prod": "tsc",
+		"start:prod": "node dist/main.js"
+	},
+	"dependencies": {
+		"@nestjs/common": "5.6.2",
+		"@nestjs/core": "^5.4.0",
+		"@nestjs/graphql": "5.5.1",
+		"apollo-server-express": "2.3.1",
+		"class-transformer": "0.2.0",
+		"class-validator": "0.9.1",
+		"graphql": "14.1.1",
+		"graphql-tools": "4.0.3",
+		"newsapi": "2.4.0",
+		"reflect-metadata": "^0.1.12",
+		"rimraf": "^2.6.3",
+		"rxjs": "^6.3.3"
+	},
+	"devDependencies": {
+		"@types/express": "^4.16.0",
+		"@types/node": "^10.12.18",
+		"@types/supertest": "^2.0.7",
+		"prettier": "^1.15.3",
+		"ts-node": "^7.0.1",
+		"tsconfig-paths": "^3.7.0",
+		"tslint": "5.12.1",
+		"typescript": "^3.2.4"
+	},
+	"keywords": []
+}
