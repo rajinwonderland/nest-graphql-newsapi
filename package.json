@@ -1,5 +1,5 @@
 {
-	"name": "nest-graphql-newsapi",
+	"name": "nest-graphql-example",
 	"version": "1.0.0",
 	"description": "A graphql wrapper for the newsapi (https://newsapi.org) using NestJS",
 	"license": "MIT",

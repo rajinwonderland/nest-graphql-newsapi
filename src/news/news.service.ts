@@ -14,7 +14,7 @@ import * as NewsAPI from 'newsapi';
  * @preferred
  */
 export class NewsApiService {
-	private newsapi = new NewsAPI(process.env.NEWS_API_TOKEN);
+	private newsapi = new NewsAPI(process.env.NEWS_API_KEY);
 	/**
 	 * @param q  Keywords or phrases to search for `q: string`.
 	 * @param options EverythingInput Class: see `src/graphql.schema.types` for type documentation
