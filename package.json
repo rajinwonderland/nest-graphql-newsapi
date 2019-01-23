@@ -1,7 +1,8 @@
 {
 	"name": "nest-graphql-example",
 	"version": "1.0.0",
-	"description": "A graphql wrapper for the newsapi (https://newsapi.org) using NestJS",
+	"description": "A graphql wrapper for the [newsapi](https://newsapi.org) using NestJS",
+	"author": "rajinwonderland",
 	"license": "MIT",
 	"scripts": {
 		"start": "ts-node src/main",
@@ -32,5 +33,5 @@
 		"tslint": "5.12.1",
 		"typescript": "^3.2.4"
 	},
-	"keywords": []
+	"keywords": ["nestjs", "graphql", "newsapi"]
 }
