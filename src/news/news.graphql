@@ -14,7 +14,7 @@ type Query {
     Params for extended filtering of articles
     Required Params are `page` & `pageSize`
     """
-    options: EverythingInput!
+    options: EverythingInput
   ): ArticleResponse
 
   """
@@ -30,7 +30,7 @@ type Query {
     Params for extended filtering of articles
     Required Params are`page` & `pageSize`
     """
-    options: HeadlineInput!
+    options: HeadlineInput
   ): ArticleResponse
   """
   Sources returns the subset of news publishers that top headlines

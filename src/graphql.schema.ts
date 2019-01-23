@@ -142,9 +142,9 @@ export class NewApiError {
 }
 
 export abstract class IQuery {
-    abstract everything(q: string, options: EverythingInput): ArticleResponse | Promise<ArticleResponse>;
+    abstract everything(q: string, options?: EverythingInput): ArticleResponse | Promise<ArticleResponse>;
 
-    abstract topHeadlines(q: string, options: HeadlineInput): ArticleResponse | Promise<ArticleResponse>;
+    abstract topHeadlines(q: string, options?: HeadlineInput): ArticleResponse | Promise<ArticleResponse>;
 
     abstract sources(options: SourceInput): SourceResponse | Promise<SourceResponse>;
 
