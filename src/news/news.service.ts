@@ -22,7 +22,7 @@ export class NewsApiService {
 	 */
 	async everything(
 		q: string,
-		options: EverythingInput
+		options: EverythingInput,
 	): Promise<ArticleResponse> {
 		const response = await this.newsapi.v2
 			.everything({
@@ -39,7 +39,7 @@ export class NewsApiService {
 	 */
 	async topHeadlines(
 		q: string,
-		options: HeadlineInput
+		options: HeadlineInput,
 	): Promise<ArticleResponse> {
 		const response = await this.newsapi.v2
 			.topHeadlines({
