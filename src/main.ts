@@ -7,10 +7,12 @@ async function bootstrap() {
 	const app = await NestFactory.create(ApplicationModule);
 	app.useGlobalPipes(new ValidationPipe());
 	await app.listen(3000);
+	addDx();
 }
 bootstrap();
 
 function addDx() {
+	// @desc a function to add some better developer experience
 	if (process.env.ENVIRONMENT !== 'dev') {
 		return;
 	}

@@ -117,6 +117,28 @@ query TopHeadlines($query: String!, $options: HeadlineInput) {
 }
 ```
 
+**Results** should end up showing in this sort of format
+
+```json
+{
+	"data": {
+		"topHeadlines": {
+			"status": "ok",
+			"totalResults": 3,
+			"articles": [
+				{
+					"title": "Starbucks to report earnings after the bell",
+					"description": "Starbucks will report its first-quarter earnings and revenue after the bell Thursday.",
+					"author": "Amelia Lucas"
+				}
+			]
+		}
+	}
+}
+```
+
+See the example on [GraphQLBin](https://www.graphqlbin.com/v2/oZQ1tP)
+
 ## Built With
 
 - [NestJS](https://docs.nestjs.com) - A progressive Node.js framework for building efficient, reliable and scalable server-side applications.
