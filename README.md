@@ -5,6 +5,8 @@
 <p align="center">A <a href="https://graphql.org/" target="_blank">GraphQL</a> REST wrapper example using the <a href="https://newsapi.org"
     target="_blank">NewsAPI</a> build with the <a href="https://nestjs.com/" target="_blank">NestJS</a> Framework</p>
 
+> Check out the repo's [wiki](https://github.com/rajinwonderland/nest-graphql-newsapi/wiki/Home) for more information!
+
 ## Demos
 
  <a href="https://nestjs-graphql-example.now.sh/graphql" target="_blank">
