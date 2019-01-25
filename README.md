@@ -37,7 +37,7 @@ Login or Sign Up for [NewsAPI](https://newsapi.org)
 
 Go to [your account page](https://newsapi.org/account) and copy your API Token
 
-**Step 3:**
+### Step 3:
 
 Create a new `.env` file and add the following environment variable
 
@@ -50,13 +50,13 @@ PORT=3000 # or your preferred port
 
 ## Installation
 
-Clone the repo!
+### Clone the repo!
 
 ```bash
 git clone https://github.com/rajinwonderland/nest-graphql-newsapi
 ```
 
-Install dependencies
+### Install dependencies
 
 ```bash
 yarn
@@ -68,7 +68,7 @@ yarn
 npm install
 ```
 
-## Start the App
+### Start the App
 
 ```bash
 yarn dev
@@ -80,7 +80,7 @@ yarn dev
 npm run dev
 ```
 
-The browser should then open automatically on to your server's graphql-playground
+The browser should then open automatically on to the graphql-playground page
 
 > **Note**: Default playground should be avaialble at http://localhost:3000/graphql
 
