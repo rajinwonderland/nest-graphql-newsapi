@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://v61olxo547.sse.codesandbox.io/graphql" target="blank"><img src="https://rawcdn.githack.com/rajinwonderland/nest-graphql-newsapi/b32a4448121d9cff1abfbe4e70c0b759216456d8/public/nestjs-graphql-example.png?raw=true"
+  <a href="https://v61olxo547.sse.codesandbox.io/graphql" target="blank"><img src="public/nestjs-graphql-example.png"
       width="320" alt="Nest Logo" /></a>
 </p>
 <p align="center">A <a href="https://graphql.org/" target="_blank">GraphQL</a> REST wrapper example using the <a href="https://newsapi.org"
@@ -7,11 +7,11 @@
 
 ## Demos
 
- <a href="https://42nz8kzl14.codesandbox.io/graphql" target="_blank">
+ <a href="https://nestjs-graphql-example.now.sh/graphql" target="_blank">
   <img src="https://rawcdn.githack.com/rajinwonderland/badgesauce/96c60b6b68d1c5b0c4486e65a563f588be8d8abe/PlaygroundBadge.svg" width="175px">
 </a>
 <br/><br/>
- <a href="https://codesandbox.io/s/42nz8kzl14?autoresize=1&expanddevtools=1&hidenavigation=1&view=editor">
+ <a href="https://codesandbox.io/s/42nz8kzl14?autoresize=1&expanddevtools=1&hidenavigation=1&view=editor" target="_blank">
     <img alt="Edit nest-graphql-example" src="https://codesandbox.io/static/img/play-codesandbox.svg" width="175px">
   </a>
 
@@ -69,13 +69,13 @@ npm install
 ## Start the App
 
 ```bash
-yarn start
+yarn dev
 ```
 
 > OR
 
 ```bash
-npm run start
+npm run dev
 ```
 
 The browser should then open automatically on to your server's graphql-playground
@@ -116,6 +116,28 @@ query TopHeadlines($query: String!, $options: HeadlineInput) {
 	}
 }
 ```
+
+**Results** should end up showing in this sort of format
+
+```json
+{
+	"data": {
+		"topHeadlines": {
+			"status": "ok",
+			"totalResults": 3,
+			"articles": [
+				{
+					"title": "Starbucks to report earnings after the bell",
+					"description": "Starbucks will report its first-quarter earnings and revenue after the bell Thursday.",
+					"author": "Amelia Lucas"
+				}
+			]
+		}
+	}
+}
+```
+
+See the example on [GraphQLBin](https://www.graphqlbin.com/v2/oZQ1tP)
 
 ## Built With
 

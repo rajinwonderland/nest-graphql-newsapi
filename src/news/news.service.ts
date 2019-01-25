@@ -6,7 +6,6 @@ import {
 	SourceResponse,
 	SourceInput,
 } from '../graphql.schema';
-import * as NewsAPI from 'newsapi';
 
 @Injectable()
 /**
@@ -14,7 +13,11 @@ import * as NewsAPI from 'newsapi';
  * @preferred
  */
 export class NewsApiService {
-	private newsapi = new NewsAPI(process.env.NEWS_API_KEY);
+	private readonly newsapi: any;
+	constructor() {
+		const NewsAPI = require('newsapi');
+		this.newsapi = new NewsAPI(process.env.NEWS_API_KEY);
+	}
 	/**
 	 * @param q  Keywords or phrases to search for `q: string`.
 	 * @param options EverythingInput Class: see `src/graphql.schema.types` for type documentation
