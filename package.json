@@ -9,7 +9,7 @@
 		"prestart:prod": "tsc",
 		"start": "node dist/main.js",
 		"build": "rimraf dist && tsc -p tsconfig.build.json",
-		"test:prod": "yarn build && yarn start"
+		"build:prod": "./scripts/build_prod.sh"
 	},
 	"dependencies": {
 		"@nestjs/common": "5.6.2",
