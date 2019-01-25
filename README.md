@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://v61olxo547.sse.codesandbox.io/graphql" target="blank"><img src="public/nestjs-graphql-example.png"
+  <a href="https://nestjs-graphql-example.now.sh/graphql" target="blank"><img src="public/nestjs-graphql-example.png"
       width="320" alt="Nest Logo" /></a>
 </p>
 <p align="center">A <a href="https://graphql.org/" target="_blank">GraphQL</a> REST wrapper example using the <a href="https://newsapi.org"
@@ -156,7 +156,7 @@ If anyone is looking for some support (i.e either an example, or an open-source 
 
 <img src="https://avatars3.githubusercontent.com/u/15880596?s=460&v=4" width="175px"/>
 
-## [Raj Singh](https://github.com/rajinwonderland)
+### [Raj Singh](https://github.com/rajinwonderland)
 
 [![](https://rawcdn.githack.com/rajinwonderland/badgesauce/475260743e433e8d11426b38a2e65ac7d1611a4a/github.svg)](https://github.com/rajinwonderland)
 
@@ -164,7 +164,6 @@ If anyone is looking for some support (i.e either an example, or an open-source 
 
 ---
 
-</p>
 <p align="right">Powered by <a href="https://newsapi.org" target="_blank">NewsAPI.org</a>
 </p>
 <br/>
