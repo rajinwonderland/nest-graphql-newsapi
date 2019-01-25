@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="http://bit.ly/2RPJ9DG/graphql" target="blank"><img src="public/nestjs-graphql-example.png"
+  <a href="http://bit.ly/2RPJ9DG" target="blank"><img src="public/nestjs-graphql-example.png"
       width="320" alt="Nest Logo" /></a>
 </p>
 <p align="center">A <a href="https://graphql.org/" target="_blank">GraphQL</a> REST wrapper example using the <a href="https://newsapi.org"
