@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://v61olxo547.sse.codesandbox.io/graphql" target="blank"><img src="https://rawcdn.githack.com/rajinwonderland/nest-graphql-newsapi/b32a4448121d9cff1abfbe4e70c0b759216456d8/public/nestjs-graphql-example.png?raw=true"
+  <a href="https://v61olxo547.sse.codesandbox.io/graphql" target="blank"><img src="public/nestjs-graphql-example.png"
       width="320" alt="Nest Logo" /></a>
 </p>
 <p align="center">A <a href="https://graphql.org/" target="_blank">GraphQL</a> REST wrapper example using the <a href="https://newsapi.org"
@@ -11,7 +11,7 @@
   <img src="https://rawcdn.githack.com/rajinwonderland/badgesauce/96c60b6b68d1c5b0c4486e65a563f588be8d8abe/PlaygroundBadge.svg" width="175px">
 </a>
 <br/><br/>
- <a href="https://codesandbox.io/s/42nz8kzl14?autoresize=1&expanddevtools=1&hidenavigation=1&view=editor">
+ <a href="https://codesandbox.io/s/42nz8kzl14?autoresize=1&expanddevtools=1&hidenavigation=1&view=editor" target="_blank">
     <img alt="Edit nest-graphql-example" src="https://codesandbox.io/static/img/play-codesandbox.svg" width="175px">
   </a>
 

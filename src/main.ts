@@ -6,8 +6,8 @@ async function bootstrap() {
 	addEnvVars();
 	const app = await NestFactory.create(ApplicationModule);
 	app.useGlobalPipes(new ValidationPipe());
-	await app.listen(process.env.PORT || 3000);
-	addDx();
+	await app.listen(3000);
+	// addDx();
 }
 bootstrap();
 
