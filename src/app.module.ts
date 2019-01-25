@@ -14,7 +14,12 @@ import { CommonModule } from './common/common.modules';
 			debug: true,
 			playground: true,
 			definitions: {
-				path: join(process.cwd(), '/graphql.schema.ts'),
+				path: join(
+					process.cwd(),
+					process.env.ENVIRONMENT === 'dev'
+						? 'src/graphql.schema.ts'
+						: '/graphql.schema.ts',
+				),
 				outputAs: 'class',
 			},
 		}),

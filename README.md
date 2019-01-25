@@ -7,7 +7,7 @@
 
 ## Demos
 
- <a href="https://42nz8kzl14.codesandbox.io/graphql" target="_blank">
+ <a href="https://nestjs-graphql-example.now.sh/graphql" target="_blank">
   <img src="https://rawcdn.githack.com/rajinwonderland/badgesauce/96c60b6b68d1c5b0c4486e65a563f588be8d8abe/PlaygroundBadge.svg" width="175px">
 </a>
 <br/><br/>
@@ -69,13 +69,13 @@ npm install
 ## Start the App
 
 ```bash
-yarn start
+yarn dev
 ```
 
 > OR
 
 ```bash
-npm run start
+npm run dev
 ```
 
 The browser should then open automatically on to your server's graphql-playground

@@ -5,10 +5,11 @@
 	"author": "rajinwonderland",
 	"license": "MIT",
 	"scripts": {
-		"dev": "ts-node src/main",
+		"dev": "./scripts/dev.sh",
 		"prestart:prod": "tsc",
 		"start": "node dist/main.js",
-		"build": "rimraf dist && tsc -p tsconfig.build.json"
+		"build": "rimraf dist && tsc -p tsconfig.build.json",
+		"deploy": "./scripts/deploy"
 	},
 	"dependencies": {
 		"@nestjs/common": "5.6.2",
@@ -33,6 +34,7 @@
 		"@types/node": "^10.12.18",
 		"@types/supertest": "^2.0.7",
 		"chalk": "^2.4.2",
+		"now": "^13.1.2",
 		"opn": "^5.4.0",
 		"ts-node": "^7.0.1",
 		"tsconfig-paths": "^3.7.0",

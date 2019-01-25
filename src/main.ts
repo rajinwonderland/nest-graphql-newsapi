@@ -7,11 +7,13 @@ async function bootstrap() {
 	const app = await NestFactory.create(ApplicationModule);
 	app.useGlobalPipes(new ValidationPipe());
 	await app.listen(3000);
-	// addDx();
 }
 bootstrap();
 
 function addDx() {
+	if (process.env.ENVIRONMENT !== 'dev') {
+		return;
+	}
 	// @def chalk & log instantiation for logging and opening the server url
 	const chalk = require('chalk');
 	const log = console.log;
@@ -25,7 +27,7 @@ function addDx() {
 	opn(`http://localhost:${process.env.PORT || 3000}/graphql`);
 	log(
 		chalk.green(
-			`Serving on http://localhost:${process.env.PORT || 3000}/graphql`,
+			`Serving on ${`http://localhost:${process.env.PORT || 3000}`}/graphql`,
 		),
 	);
 }
