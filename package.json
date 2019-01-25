@@ -5,16 +5,15 @@
 	"author": "rajinwonderland",
 	"license": "MIT",
 	"scripts": {
-		"start": "ts-node src/main",
+		"dev": "ts-node src/main",
 		"prestart:prod": "tsc",
-		"start:prod": "node dist/main.js",
-		"build": "tsc -p tsconfig.build.json"
+		"start": "node dist/main.js",
+		"build": "rimraf dist && tsc -p tsconfig.build.json"
 	},
 	"dependencies": {
 		"@nestjs/common": "5.6.2",
 		"@nestjs/core": "^5.4.0",
 		"@nestjs/graphql": "5.5.1",
-		"@types/dotenv": "^6.1.0",
 		"apollo-server-express": "2.3.1",
 		"class-transformer": "0.2.0",
 		"class-validator": "^0.8.1",
@@ -28,7 +27,9 @@
 		"rxjs": "^6.3.3"
 	},
 	"devDependencies": {
-		"@types/express": "^4.16.0",
+		"@types/dotenv": "^6.1.0",
+		"@types/express": "^4.16.1",
+		"@types/graphql": "^14.0.5",
 		"@types/node": "^10.12.18",
 		"@types/supertest": "^2.0.7",
 		"chalk": "^2.4.2",
