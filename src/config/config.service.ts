@@ -1,10 +1,9 @@
+// @reason Added ConfigService as per @nartc's suggestion. Reference to his gist here: https://gist.github.com/nartc/f8f5746e2e00b5a731a338ba76b5c2bb
+
 import { Injectable } from '@nestjs/common';
-import { parse } from 'dotenv';
-import { readFileSync } from 'fs';
 import { number, object, ObjectSchema, string, validate } from 'joi';
 import { Config } from './config.enum';
-import { MyLogger } from '../logger/logger.service';
-// @reason Added ConfigService as per @nartc's suggestion. Reference to his gist here: https://gist.github.com/nartc/f8f5746e2e00b5a731a338ba76b5c2bb
+import { CustomLogger } from '../logger/logger.service';
 
 interface EnvConfig {
 	[key: string]: string;
@@ -14,14 +13,14 @@ interface EnvConfig {
 export class ConfigService {
 	private readonly envConfig: EnvConfig;
 
-	constructor(filePath: string) {
-		const rawConfig = parse(readFileSync(filePath));
+	constructor() {
+		const rawConfig = require('dotenv').config({ path: '.env' }).parsed;
 		this.envConfig = this.validateConfiguration(rawConfig);
 	}
 
 	private validateConfiguration(raw: EnvConfig): EnvConfig {
 		const variableSchema: ObjectSchema = object({
-			NODE_ENV: string()
+			GRAPHQL_ENV: string()
 				.valid(['development', 'production'])
 				.default('development'),
 			NEWS_API_KEY: string().required(),
@@ -31,10 +30,10 @@ export class ConfigService {
 		const { error, value: validatedConfig } = validate(raw, variableSchema);
 
 		if (error) {
-			MyLogger.error(
+			CustomLogger.error(
 				`Config validation error: ${error.message}`,
 				error.stack,
-				error.details.toString(),
+				JSON.stringify(error.details),
 			);
 			throw new Error(`Config validation error: ${error.message}`);
 		}
@@ -43,7 +42,7 @@ export class ConfigService {
 	}
 
 	get isDevelopment(): boolean {
-		return Boolean(this.get(Config.NODE_ENV));
+		return Boolean(this.get(Config.GRAPHQL_ENV));
 	}
 
 	get port(): number {

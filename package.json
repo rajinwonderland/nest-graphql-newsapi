@@ -5,11 +5,10 @@
 	"author": "rajinwonderland",
 	"license": "MIT",
 	"scripts": {
-		"dev": "./scripts/dev.sh",
+		"dev": "ts-node src/main",
 		"prestart:prod": "tsc",
 		"start": "node dist/main.js",
-		"build": "rimraf dist && tsc -p tsconfig.build.json",
-		"build:prod": "./scripts/build_prod.sh"
+		"build": "rimraf dist && tsc -p tsconfig.build.json"
 	},
 	"dependencies": {
 		"@nestjs/common": "5.6.2",
@@ -25,6 +24,7 @@
 		"joi": "^14.3.1",
 		"nestjs-config": "^1.2.9",
 		"newsapi": "2.4.0",
+		"opn": "^5.4.0",
 		"reflect-metadata": "^0.1.12",
 		"rimraf": "^2.6.3",
 		"rxjs": "^6.3.3"
@@ -38,7 +38,6 @@
 		"@types/node": "^10.12.18",
 		"@types/supertest": "^2.0.7",
 		"now": "^13.1.2",
-		"opn": "^5.4.0",
 		"ts-node": "^7.0.1",
 		"tsconfig-paths": "^3.7.0",
 		"tslint": "5.12.1",

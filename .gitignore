@@ -10,6 +10,7 @@ docker-compose.yml
 development.env
 production.env
 .env
+*.env
 dist
 node_modules
 *.log

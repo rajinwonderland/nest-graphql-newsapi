@@ -6,6 +6,7 @@ import {
 	SourceResponse,
 	SourceInput,
 } from '../graphql.schema';
+import { ConfigService } from '../config/config.service';
 
 @Injectable()
 /**
@@ -14,9 +15,11 @@ import {
  */
 export class NewsApiService {
 	private readonly newsapi: any;
-	constructor() {
+	private readonly config: ConfigService;
+	constructor(config: ConfigService) {
 		const NewsAPI = require('newsapi');
-		this.newsapi = new NewsAPI(process.env.NEWS_API_KEY);
+		this.config = config;
+		this.newsapi = new NewsAPI(this.config.newsApiKey);
 	}
 	/**
 	 * @param q  Keywords or phrases to search for `q: string`.
