@@ -1,4 +1,4 @@
-export ENVIRONMENT="production"
-export PORT=8080
+export NODE_ENV="production"
+export PORT=3000
 yarn build
 yarn start

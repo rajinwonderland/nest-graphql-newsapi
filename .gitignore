@@ -7,6 +7,8 @@ sandbox.config.json
 
 # Local
 docker-compose.yml
+.env.development
+.env.production
 .env
 dist
 node_modules

@@ -1,8 +1,9 @@
-import { Module } from '@nestjs/common';
+import { Module, Logger } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { join } from 'path';
 import { NewsModule } from './news/news.module';
 import { CommonModule } from './common/common.modules';
+import { AppService } from './app.service';
 
 @Module({
 	imports: [
@@ -16,7 +17,7 @@ import { CommonModule } from './common/common.modules';
 			definitions: {
 				path: join(
 					process.cwd(),
-					process.env.ENVIRONMENT === 'dev'
+					process.env.NODE_ENV === 'development'
 						? 'src/graphql.schema.ts'
 						: '/graphql.schema.ts',
 				),
@@ -24,5 +25,6 @@ import { CommonModule } from './common/common.modules';
 			},
 		}),
 	],
+	providers: [AppService],
 })
 export class ApplicationModule {}
