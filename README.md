@@ -13,7 +13,7 @@
   <img src="https://rawcdn.githack.com/rajinwonderland/badgesauce/96c60b6b68d1c5b0c4486e65a563f588be8d8abe/PlaygroundBadge.svg" width="175px">
 </a>
 <br/><br/>
- <a href="https://codesandbox.io/s/42nz8kzl14?autoresize=1&expanddevtools=1&hidenavigation=1&view=editor" target="_blank">
+ <a href="https://codesandbox.io/s/4r84973oj9?autoresize=1&expanddevtools=1&hidenavigation=1&view=editor" target="_blank">
     <img alt="Edit nest-graphql-example" src="https://codesandbox.io/static/img/play-codesandbox.svg" width="175px">
   </a>
 
