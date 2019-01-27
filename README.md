@@ -19,7 +19,7 @@
 
 ## Background
 
-Recently came across the [NestJS](https://nestjs.org) while expirementing with different [Typescript](https://www.typescriptlang.org/) based frameworks for [GraphQL](https://graphql.org) specific use cases.
+Recently came across the [NestJS](https://nestjs.org) while experimenting with different [Typescript](https://www.typescriptlang.org/) based frameworks for [GraphQL](https://graphql.org) specific use cases.
 
 Official NestJS [Documentation for use with GraphQL](https://docs.nestjs.com/graphql/quick-start)
 
