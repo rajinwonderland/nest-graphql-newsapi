@@ -2,7 +2,7 @@ import { Module, OnApplicationBootstrap } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { join } from 'path';
 import { NewsModule } from './news/news.module';
-import { CommonModule } from './common/common.modules';
+import { CommonModule } from './common/common.module';
 import { ConfigModule } from './config/config.module';
 import { ConfigService } from './config/config.service';
 import { CustomLogger } from './logger/logger.service';
