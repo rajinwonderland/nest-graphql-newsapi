@@ -1,4 +1,4 @@
-import { Args, Query, Resolver } from '@nestjs/graphql';
+import { Args, Query, Resolver, Parent } from '@nestjs/graphql';
 import {
 	ArticleResponse,
 	SourceResponse,
@@ -25,12 +25,12 @@ export class NewsApiResolvers {
 		@Args('q') q: string,
 		@Args('options') options: HeadlineInput,
 	): Promise<ArticleResponse> {
-		console.log('FROM RESOLVER', q);
 		return await this.newService.topHeadlines(q, options);
 	}
 
 	@Query('sources')
 	async sources(
+		@Parent() parent,
 		@Args('options') options: SourceInput,
 	): Promise<SourceResponse> {
 		return await this.newService.sources(options);

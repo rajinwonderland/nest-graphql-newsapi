@@ -7,6 +7,8 @@ import {
 	SourceInput,
 } from '../graphql.schema';
 import { ConfigService } from '../config/config.service';
+const NewsAPI = require('newsapi');
+const newsapi = new NewsAPI(new ConfigService().newsApiKey);
 
 @Injectable()
 /**
@@ -14,13 +16,6 @@ import { ConfigService } from '../config/config.service';
  * @preferred
  */
 export class NewsApiService {
-	private readonly newsapi: any;
-	private readonly config: ConfigService;
-	constructor(config: ConfigService) {
-		const NewsAPI = require('newsapi');
-		this.config = config;
-		this.newsapi = new NewsAPI(this.config.newsApiKey);
-	}
 	/**
 	 * @param q  Keywords or phrases to search for `q: string`.
 	 * @param options EverythingInput Class: see `src/graphql.schema.types` for type documentation
@@ -30,7 +25,7 @@ export class NewsApiService {
 		q: string,
 		options: EverythingInput,
 	): Promise<ArticleResponse> {
-		const response = await this.newsapi.v2
+		const response = await newsapi.v2
 			.everything({
 				q,
 				...options,
@@ -47,7 +42,7 @@ export class NewsApiService {
 		q: string,
 		options: HeadlineInput,
 	): Promise<ArticleResponse> {
-		const response = await this.newsapi.v2
+		const response = await newsapi.v2
 			.topHeadlines({
 				q,
 				...options,
@@ -61,7 +56,7 @@ export class NewsApiService {
 	 * @returns `response: Promise<SourceResponse>`
 	 */
 	async sources(options: SourceInput): Promise<SourceResponse> {
-		const response = await this.newsapi.v2
+		const response = await newsapi.v2
 			.sources({
 				...options,
 			})

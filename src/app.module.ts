@@ -22,9 +22,10 @@ import { LoggerModule } from './logger/logger.module';
 			definitions: {
 				path: join(
 					process.cwd(),
+					// @reason working directory for the build is set to src
 					process.env.GRAPHQL_ENV === 'development'
-						? './src/graphql.schema.ts'
-						: '/graphql.schema.ts',
+						? 'src/graphql.schema.ts'
+						: 'graphql.schema.ts',
 				),
 				outputAs: 'class',
 			},
