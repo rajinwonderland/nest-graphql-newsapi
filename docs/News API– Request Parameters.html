@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+		<title>Top Headlines Endpoint</title>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css"
+			integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css"
+		/>
+		<link
+			href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css"
+			rel="stylesheet"
+			type="text/css"
+		/>
+		<style>
+			.task-list-item {
+				list-style-type: none;
+			}
+			.task-list-item-checkbox {
+				margin-left: -20px;
+				vertical-align: middle;
+			}
+		</style>
+		<style>
+			body {
+				font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI',
+					'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif;
+				font-size: 16px;
+				line-height: 1.6;
+			}
+		</style>
+
+		<script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+	</head>
+	<body>
+		<h2 id="top-headlines-endpoint">Top Headlines Endpoint</h2>
+		<blockquote>
+			<p><code>/v2/top-headlines</code></p>
+		</blockquote>
+		<p><strong>Request Parameters:</strong></p>
+		<table>
+			<thead>
+				<tr>
+					<th><strong>Name</strong></th>
+					<th><strong>Type</strong></th>
+					<th><strong>Description</strong></th>
+					<th style="text-align:right"><strong>Required/Default</strong></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><strong>q</strong></td>
+					<td><code>string | string[]</code></td>
+					<td>Keywords or a phrase to search for.</td>
+					<td style="text-align:right"><code>true</code></td>
+				</tr>
+				<tr>
+					<td><strong>country</strong></td>
+					<td>
+						<code
+							>ae ar at au be bg br ca ch cn co cu cz de eg fr gb gr hk hu id ie
+							il in it jp kr lt lv ma mx my ng nl no nz ph pl pt ro rs ru sa se
+							sg si sk th tr tw ua us ve za</code
+						>
+					</td>
+					<td>
+						The 2-letter <code>ISO 3166-1</code> code of the country you want to
+						get headlines for.
+					</td>
+					<td style="text-align:right"><code>false</code></td>
+				</tr>
+				<tr>
+					<td><strong>category</strong></td>
+					<td>
+						<code
+							>business entertainment general health science sports
+							technology</code
+						>
+						.
+					</td>
+					<td>The category you want to get headlines for.</td>
+					<td style="text-align:right"><code>false</code></td>
+				</tr>
+				<tr>
+					<td><strong>sources</strong></td>
+					<td><code>string | string[]</code></td>
+					<td>
+						A comma-seperated string of identifiers for the news sources or
+						blogs you want headlines from. Use the /sources endpoint to locate
+						these programmatically or look at the sources index.
+					</td>
+					<td style="text-align:right"><code>false</code></td>
+				</tr>
+				<tr>
+					<td><strong>pageSize</strong></td>
+					<td><code>int</code></td>
+					<td>
+						The number of results to return per page (request). 20 is the
+						default, 100 is the maximum.
+					</td>
+					<td style="text-align:right"><code>false</code></td>
+				</tr>
+				<tr>
+					<td><strong>page</strong></td>
+					<td><code>int</code></td>
+					<td>
+						Use this to page through the results if the total results found is
+						greater than the page size.
+					</td>
+					<td style="text-align:right"><code>false</code></td>
+				</tr>
+			</tbody>
+		</table>
+		<h2 id="everything-endpoint">Everything Endpoint</h2>
+		<blockquote>
+			<p><code>/v2/everything</code></p>
+		</blockquote>
+		<p><strong>Request Parameters:</strong></p>
+		<table>
+			<thead>
+				<tr>
+					<th><strong>Name</strong></th>
+					<th><strong>Type</strong></th>
+					<th><strong>Description</strong></th>
+					<th><strong>Required/Default</strong></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><strong>q</strong></td>
+					<td><code>string | string[]</code></td>
+					<td>Keywords or phrases to search for.</td>
+					<td><code>true</code></td>
+				</tr>
+				<tr>
+					<td><strong>sources</strong></td>
+					<td><code>string | string[]</code></td>
+					<td>
+						A comma-seperated string of identifiers (maximum 20) for the news
+						sources or blogs you want headlines from. Use the /sources endpoint
+						to locate these programmatically or look at the sources index.
+					</td>
+					<td><code>false</code></td>
+				</tr>
+				<tr>
+					<td><strong>domains</strong></td>
+					<td><code>string | string[]</code></td>
+					<td>
+						A comma-seperated string of domains (eg
+						<a href="http://bbc.co.uk">bbc.co.uk</a>,
+						<a href="http://techcrunch.com">techcrunch.com</a>,
+						<a href="http://engadget.com">engadget.com</a>) to restrict the
+						search to.
+					</td>
+					<td><code>false</code></td>
+				</tr>
+				<tr>
+					<td><strong>excludeDomains</strong></td>
+					<td><code>string | string[]</code></td>
+					<td>
+						A comma-seperated string of domains (eg
+						<a href="http://bbc.co.uk">bbc.co.uk</a>,
+						<a href="http://techcrunch.com">techcrunch.com</a>,
+						<a href="http://engadget.com">engadget.com</a>) to remove from the
+						results.
+					</td>
+					<td><code>false</code></td>
+				</tr>
+				<tr>
+					<td><strong>from</strong>_</td>
+					<td><code>ISO 8601</code></td>
+					<td>A date and optional time for the oldest article allowed.</td>
+					<td><strong>DEFAULT</strong>: the oldest according to your plan</td>
+				</tr>
+				<tr>
+					<td><strong>to</strong>_</td>
+					<td><code>ISO 8601</code></td>
+					<td>A date and optional time for the newest article allowed.</td>
+					<td><strong>DEFAULT</strong>: the newest according to your plan.</td>
+				</tr>
+				<tr>
+					<td><strong>language</strong></td>
+					<td><code>ar de en es fr he it nl no pt ru se ud zh</code></td>
+					<td>
+						The 2-letter ISO-639-1 code of the language you want to get
+						headlines for.
+					</td>
+					<td>
+						<code>false</code> <strong>DEFAULT</strong>:
+						<code>all</code> languages returned.
+					</td>
+				</tr>
+				<tr>
+					<td><strong>sortBy</strong></td>
+					<td><code>relevancy popularity publishedAt</code></td>
+					<td>
+						The order to sort the articles in.<br />
+						<code>relevancy</code> = articles more closely related to q come
+						first.<br /><code>popularity</code> = articles from popular sources
+						and publishers come first.<br /><code>publishedAt</code> = newest
+						articles come first.
+					</td>
+					<td><strong>DEFAULT</strong>: <code>publishedAt</code></td>
+				</tr>
+				<tr>
+					<td><strong>pageSize</strong></td>
+					<td><code>int</code></td>
+					<td>The number of results to return per page.</td>
+					<td>
+						<strong>DEFAULT</strong>: <code>20</code> <strong>MAX</strong>:
+						<code>100</code>
+					</td>
+				</tr>
+				<tr>
+					<td><strong>page</strong></td>
+					<td><code>int</code></td>
+					<td>Use this to page through the results.</td>
+					<td><code>false</code></td>
+				</tr>
+			</tbody>
+		</table>
+		<blockquote>
+			<p>
+				Parameter <strong>names*</strong> should be in
+				<code>ISO 8601</code> format<br />
+				(e.g. <code>2019-01-29</code> or <code>2019-01-29T19:21:06</code>)
+			</p>
+		</blockquote>
+		<h2 id="sources-endpoint">Sources Endpoint</h2>
+		<blockquote>
+			<p><code>/v2/sources</code></p>
+		</blockquote>
+		<p><strong>Request Parameters:</strong></p>
+		<table>
+			<thead>
+				<tr>
+					<th><strong>Name</strong></th>
+					<th><strong>Type</strong></th>
+					<th><strong>Description</strong></th>
+					<th><strong>Required/Default</strong></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><strong>category</strong></td>
+					<td>
+						<code
+							>business entertainment general health science sports
+							technology</code
+						>
+					</td>
+					<td>Find sources that display news of this category.</td>
+					<td><strong>DEFAULT</strong>: <code>all</code> categories.</td>
+				</tr>
+				<tr>
+					<td><strong>language</strong></td>
+					<td><code>ar de en es fr he it nl no pt ru se ud zh</code></td>
+					<td>Find sources that display news in a specific language.</td>
+					<td><strong>DEFAULT</strong>: <code>all</code> languages.</td>
+				</tr>
+				<tr>
+					<td><strong>country</strong></td>
+					<td>
+						<code
+							>ae ar at au be bg br ca ch cn co cu cz de eg fr gb gr hk hu id ie
+							il in it jp kr lt lv ma mx my ng nl no nz ph pl pt ro rs ru sa se
+							sg si sk th tr tw ua us ve za</code
+						>
+					</td>
+					<td>Find sources that display news in a specific country.</td>
+					<td><strong>DEFAULT</strong>: <code>all</code> countries.</td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>
