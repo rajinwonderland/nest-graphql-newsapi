@@ -28,6 +28,10 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ env.NODE_VERSION }}
+        env:
+          NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
+          GRAPHQL_ENV: ${{ secrets.GRAPHQL_ENV }}
+          PORT: ${{ secrets.PORT }}
       - name: yarn install, build, and test
         run: |
           # Build and test the project, then
