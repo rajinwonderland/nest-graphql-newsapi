@@ -22,7 +22,6 @@
 	"dependencies": {
 		"@graphql-toolkit/file-loading": "^0.9.4",
 		"@graphql-toolkit/schema-merging": "^0.9.4",
-		"@hapi/joi": "^17.1.0",
 		"@nestjs/common": "6.11.1",
 		"@nestjs/core": "6.11.1",
 		"@nestjs/graphql": "6.5.3",
@@ -36,6 +35,7 @@
 		"dotenv": "^6.2.0",
 		"graphql": "14.5.8",
 		"graphql-subscriptions": "1.1.0",
+		"joi": "14.3.1",
 		"merge-graphql-schemas": "1.7.0",
 		"nestjs-config": "latest",
 		"newsapi": "latest",
