@@ -1,7 +1,7 @@
 // @reason Added ConfigService as per @nartc's suggestion. Reference to his gist here: https://gist.github.com/nartc/f8f5746e2e00b5a731a338ba76b5c2bb
 
 import { Injectable } from '@nestjs/common';
-import { number, object, ObjectSchema, string, validate } from 'joi';
+import { number, object, ObjectSchema, string, validate } from '@hapi/joi';
 import { Config } from './config.enum';
 import { CustomLogger } from '../logger/logger.service';
 
