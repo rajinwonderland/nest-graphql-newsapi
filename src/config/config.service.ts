@@ -14,7 +14,14 @@ export class ConfigService {
 	private readonly envConfig: EnvConfig;
 
 	constructor() {
-		const rawConfig = require('dotenv').config({ path: '.env' }).parsed;
+		const rawConfig =
+			process.env.GRAPHQL_ENV === 'development'
+				? require('dotenv').config({ path: '.env' }).parsed
+				: {
+						GRAPHQL_ENV: process.env.GRAPHQL_ENV,
+						NEWS_API_KEY: process.env.NEWS_API_KEY,
+						PORT: process.env.POR
+				  };
 		this.envConfig = this.validateConfiguration(rawConfig);
 	}
 
