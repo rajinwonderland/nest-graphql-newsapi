@@ -17,7 +17,9 @@ env:
   AZURE_WEBAPP_NAME: nest-graphql-newsapi # set this to your application's name
   AZURE_WEBAPP_PACKAGE_PATH: '.' # set this to the path to your web app project, defaults to the repository root
   NODE_VERSION: '10.13.0' # set this to the node version to use
-
+  NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
+  GRAPHQL_ENV: ${{ secrets.GRAPHQL_ENV }}
+  PORT: ${{ secrets.PORT }}
 jobs:
   build-and-deploy:
     name: Build and Deploy
@@ -28,10 +30,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ env.NODE_VERSION }}
-        env:
-          NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
-          GRAPHQL_ENV: ${{ secrets.GRAPHQL_ENV }}
-          PORT: ${{ secrets.PORT }}
       - name: yarn install, build, and test
         run: |
           # Build and test the project, then
