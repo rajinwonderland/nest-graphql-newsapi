@@ -46,12 +46,13 @@ Go to [your account page](https://newsapi.org/account) and copy your API Token
 Create a new `.env` file and add the following environment variable
 
 ```sh
-echo export NEWS_API_KEY="CANTYOUSEEIMSELFAWAREWITHDIGITS3030" >> .env
+echo NEWS_API_KEY="CANTYOUSEEIMSELFAWAREWITHDIGITS3030" >> .env
 ```
 
 > Note: you can also just rename the `.env.sample` to `.env` and replace the key there
 
 ```sh
+GRAPHQL_ENV=development
 NEWS_API_KEY="SOMEONEPLEASEHELPMEWITHDIGITS3030"
 PORT=3000 # or your preferred port
 ```
