@@ -24,7 +24,7 @@ export class ConfigService {
 				.valid(['development', 'production'])
 				.default('development'),
 			NEWS_API_KEY: string().required(),
-			PORT: number().default(3000),
+			PORT: number().default(3000)
 		});
 
 		const { error, value: validatedConfig } = validate(raw, variableSchema);
@@ -33,7 +33,7 @@ export class ConfigService {
 			CustomLogger.error(
 				`Config validation error: ${error.message}`,
 				error.stack,
-				JSON.stringify(error.details),
+				JSON.stringify(error.details)
 			);
 			throw new Error(`Config validation error: ${error.message}`);
 		}

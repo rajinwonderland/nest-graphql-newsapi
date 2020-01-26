@@ -4,7 +4,7 @@ import {
 	SourceResponse,
 	SourceInput,
 	HeadlineInput,
-	EverythingInput,
+	EverythingInput
 } from '../graphql.schema';
 import { NewsApiService } from './news.service';
 
@@ -15,7 +15,7 @@ export class NewsApiResolvers {
 	@Query('everything')
 	async everything(
 		@Args('q') q: string,
-		@Args('options') options: EverythingInput,
+		@Args('options') options: EverythingInput
 	): Promise<ArticleResponse> {
 		return await this.newService.everything(q, options);
 	}
@@ -23,7 +23,7 @@ export class NewsApiResolvers {
 	@Query('topHeadlines')
 	async topHeadlines(
 		@Args('q') q: string,
-		@Args('options') options: HeadlineInput,
+		@Args('options') options: HeadlineInput
 	): Promise<ArticleResponse> {
 		return await this.newService.topHeadlines(q, options);
 	}
@@ -31,7 +31,7 @@ export class NewsApiResolvers {
 	@Query('sources')
 	async sources(
 		@Parent() parent,
-		@Args('options') options: SourceInput,
+		@Args('options') options: SourceInput
 	): Promise<SourceResponse> {
 		return await this.newService.sources(options);
 	}

@@ -4,7 +4,7 @@ import {
 	HeadlineInput,
 	EverythingInput,
 	SourceResponse,
-	SourceInput,
+	SourceInput
 } from '../graphql.schema';
 import { ConfigService } from '../config/config.service';
 const NewsAPI = require('newsapi');
@@ -23,12 +23,12 @@ export class NewsApiService {
 	 */
 	async everything(
 		q: string,
-		options: EverythingInput,
+		options: EverythingInput
 	): Promise<ArticleResponse> {
 		const response = await newsapi.v2
 			.everything({
 				q,
-				...options,
+				...options
 			})
 			.then(res => res);
 		return response;
@@ -40,12 +40,12 @@ export class NewsApiService {
 	 */
 	async topHeadlines(
 		q: string,
-		options: HeadlineInput,
+		options: HeadlineInput
 	): Promise<ArticleResponse> {
 		const response = await newsapi.v2
 			.topHeadlines({
 				q,
-				...options,
+				...options
 			})
 			.then(res => res);
 
@@ -58,7 +58,7 @@ export class NewsApiService {
 	async sources(options: SourceInput): Promise<SourceResponse> {
 		const response = await newsapi.v2
 			.sources({
-				...options,
+				...options
 			})
 			.then(res => res);
 

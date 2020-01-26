@@ -11,7 +11,7 @@ export class CustomLogger extends Logger {
 		return super.error(
 			this.c.bold(message),
 			this.c.red(trace),
-			this.c.bgRed(ctx),
+			this.c.bgRed(ctx)
 		);
 	}
 

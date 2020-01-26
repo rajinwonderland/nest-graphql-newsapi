@@ -1,6 +1,5 @@
 import { Module, OnApplicationBootstrap } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
-import { join } from 'path';
 import { NewsModule } from './news/news.module';
 import { CommonModule } from './common/common.module';
 import { ConfigModule } from './config/config.module';
@@ -18,19 +17,9 @@ import { LoggerModule } from './logger/logger.module';
 			typePaths: ['./**/*.graphql'],
 			installSubscriptionHandlers: false,
 			debug: true,
-			playground: true,
-			definitions: {
-				path: join(
-					process.cwd(),
-					// @reason working directory for the build is set to src
-					process.env.GRAPHQL_ENV === 'development'
-						? 'src/graphql.schema.ts'
-						: 'graphql.schema.ts',
-				),
-				outputAs: 'class',
-			},
-		}),
-	],
+			playground: true
+		})
+	]
 })
 export class ApplicationModule implements OnApplicationBootstrap {
 	private readonly config;
@@ -45,26 +34,26 @@ export class ApplicationModule implements OnApplicationBootstrap {
 		this.postListen();
 	}
 
-	openPlayground() {
-		// @def opn instantiation for opening the browser for better dX
-		if (!this.isDevelopment) {
-			return;
-		}
+	// @deprecated Used to open browser straight to graphql playground prior to nestjs-cli
+	// openPlayground() {
+	// 	if (!this.isDevelopment) {
+	// 		return;
+	// 	}
 
-		// ! opens the browser straight to playground
-		return require('opn')(`http://localhost:${this.config.port}/graphql`);
-	}
+	// 	// ! Used to open browser straight to graphql playground
+	// 	// return require('opn')(`http://localhost:${this.config.port}/graphql`);
+	// }
 
 	postListen() {
 		if (!this.isDevelopment) {
 			return;
 		}
 		this.logger.log(
-			`\nStarting the ${this.config.get('GRAPHQL_ENV')} server...\n`,
+			`\nStarting the ${this.config.get('GRAPHQL_ENV')} server...\n`
 		);
 		this.logger.log(
-			`Serving on ${`http://localhost:${this.config.port}`}/graphql`,
+			`Serving on ${`http://localhost:${this.config.port}`}/graphql`
 		);
-		this.openPlayground();
+		// this.openPlayground();
 	}
 }

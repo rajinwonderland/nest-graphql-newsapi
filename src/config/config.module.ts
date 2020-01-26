@@ -6,7 +6,7 @@ import { LoggerModule } from '../logger/logger.module';
 @Module({
 	imports: [LoggerModule],
 	providers: [ConfigService],
-	exports: [ConfigService],
+	exports: [ConfigService]
 })
 export class ConfigModule implements OnModuleInit {
 	logger;

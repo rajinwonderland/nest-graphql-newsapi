@@ -3,6 +3,6 @@ import { CustomLogger } from './logger.service';
 
 @Module({
 	providers: [CustomLogger],
-	exports: [CustomLogger],
+	exports: [CustomLogger]
 })
 export class LoggerModule {}
