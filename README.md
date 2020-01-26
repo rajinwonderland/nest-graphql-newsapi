@@ -146,10 +146,11 @@ See the example on [GraphQLBin](https://www.graphqlbin.com/v2/oZQ1tP)
 - [Typescript](https://github.com/Microsoft/TypeScript) a superset of JavaScript that compiles to clean JavaScript output
 - [CodeSandbox](https://codesandbox.io) is an online code editor with a focus on creating and sharing web application projects.
 - [GraphQL-Playground](https://github.com/prisma-labs/graphql-playground) a GraphQL IDE for better development workflows (GraphQL Subscriptions, interactive docs & collaboration).
- - [Fastify](https://www.fastify.io/) a fast and low overhead web framework for Node.js
- - [Apollo Server Fastify](https://github.com/apollographql/apollo-server/tree/master/packages/apollo-server-fastify) – This is the [Fastify](https://github.com/fastify/fastify) integration of GraphQL Server. Apollo Server is a community-maintained open-source GraphQL server that works with many Node.js HTTP server frameworks.
 
-> The updated version of this api uses a workaround to deploy using `zeit/now`. This is due to a downstream dependency issue on `@nestjs/graphql` – see [zeit/now #3115](https://github.com/zeit/now/issues/3115) and [TrilonIO/zeit-now-nestjs #2](https://github.com/TrilonIO/zeit-now-nestjs/issues/2))
+
+> The updated version of this api had to exclude the following dependencies in order to deploy to render.com. This is due to a downstream dependency issue on `@nestjs/graphql` – see [zeit/now #3115](https://github.com/zeit/now/issues/3115) and [TrilonIO/zeit-now-nestjs #2](https://github.com/TrilonIO/zeit-now-nestjs/issues/2))
+>  - [Fastify](https://www.fastify.io/) a fast and low overhead web framework for Node.js
+>  - [Apollo Server Fastify](https://github.com/apollographql/apollo-server/tree/master/packages/apollo-server-fastify) – This is the [Fastify](https://github.com/fastify/fastify) integration of GraphQL Server. Apollo Server is a community-maintained open-source GraphQL server that works with many Node.js HTTP server frameworks.
 
 
 

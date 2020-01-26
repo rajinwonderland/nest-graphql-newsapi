@@ -26,9 +26,9 @@
 		"@nestjs/common": "6.11.1",
 		"@nestjs/core": "6.11.1",
 		"@nestjs/graphql": "6.5.3",
-		"@nestjs/platform-fastify": "^6.11.1",
+		"@nestjs/platform-express": "^6.11.1",
 		"ansi-colors": "^3.2.3",
-		"apollo-server-fastify": "^2.9.16",
+		"apollo-server-express": "^2.9.16",
 		"aws-lambda": "^1.0.5",
 		"aws-serverless-express": "^3.3.6",
 		"class-transformer": "0.2.3",
@@ -71,8 +71,10 @@
 		"graphql",
 		"newsapi"
 	],
+	"engines": {
+		"node": "10.13.0"
+	},
 	"resolutions": {
-		"@nestjs/graphql/merge-graphql-schemas": "1.7.0",
-		"fast-glob": "https://files-5653q5abb.now.sh"
+		"@nestjs/graphql/merge-graphql-schemas": "1.7.0"
 	}
 }
