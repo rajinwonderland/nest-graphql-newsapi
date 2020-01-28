@@ -1,0 +1,8 @@
+{
+  "appService.zipIgnorePattern": [
+    "node_modules{,/**}",
+    ".vscode{,/**}"
+  ],
+  "appService.defaultWebAppToDeploy": "/subscriptions/c2648d08-cd18-4c13-9521-2d273ac5d389/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/nestjs-graphql-newsapi",
+  "appService.deploySubpath": ""
+}

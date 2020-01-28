@@ -14,7 +14,7 @@ on:
       - master
 
 env:
-  AZURE_WEBAPP_NAME: nest-graphql-newsapi # set this to your application's name
+  AZURE_WEBAPP_NAME: nestjs-graphql-newsapi # set this to your application's name
   AZURE_WEBAPP_PACKAGE_PATH: '.' # set this to the path to your web app project, defaults to the repository root
   AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
   NODE_VERSION: '10.13.0' # set this to the node version to use
