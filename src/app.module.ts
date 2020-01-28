@@ -47,13 +47,14 @@ export class ApplicationModule implements OnApplicationBootstrap {
 	postListen() {
 		if (!this.isDevelopment) {
 			return;
+		} else {
+			this.logger.log(
+				`\nStarting the ${this.config.get('GRAPHQL_ENV')} server...\n`
+			);
+			this.logger.log(
+				`Serving on ${`http://localhost:${this.config.port}`}/graphql`
+			);
 		}
-		this.logger.log(
-			`\nStarting the ${this.config.get('GRAPHQL_ENV')} server...\n`
-		);
-		this.logger.log(
-			`Serving on ${`http://localhost:${this.config.port}`}/graphql`
-		);
 		// this.openPlayground();
 	}
 }
