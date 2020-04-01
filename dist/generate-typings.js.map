@@ -1,1 +1,0 @@
-{"version":3,"file":"generate-typings.js","sourceRoot":"","sources":["../src/generate-typings.ts"],"names":[],"mappings":";;AAAA,6CAA4D;AAC5D,+BAA4B;AAE5B,MAAM,kBAAkB,GAAG,IAAI,mCAAyB,EAAE,CAAC;AAC3D,kBAAkB,CAAC,QAAQ,CAAC;IAC3B,SAAS,EAAE,CAAC,gBAAgB,CAAC;IAC7B,IAAI,EAAE,WAAI,CAAC,OAAO,CAAC,GAAG,EAAE,EAAE,uBAAuB,CAAC;IAClD,QAAQ,EAAE,OAAO;CACjB,CAAC,CAAC"}

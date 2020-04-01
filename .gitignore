@@ -11,7 +11,7 @@ development.env
 production.env
 .env
 *.env
-# dist
+dist
 node_modules
 *.log
 
