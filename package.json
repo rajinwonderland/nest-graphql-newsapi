@@ -27,7 +27,7 @@
 		"@nestjs/graphql": "6.5.3",
 		"@nestjs/platform-fastify": "^6.11.1",
 		"ansi-colors": "^3.2.3",
-		"apollo-server-fastify": "^2.9.16",
+		"apollo-server-fastify": "^2.14.2",
 		"aws-lambda": "^1.0.5",
 		"aws-serverless-express": "^3.3.6",
 		"class-transformer": "0.2.3",
